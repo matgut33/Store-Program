@@ -7,7 +7,7 @@
 package store;
 
 /**
- * @authors Henry Dench [c], Matthew Gutkin, Sam Meyerwitz
+ * @authors Henry Dench [c], Matthew Gutkin, Sam Meyerowitz
  * @author Period 8
  */
 public class StoreClass {
