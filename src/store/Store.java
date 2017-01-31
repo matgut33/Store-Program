@@ -20,6 +20,16 @@ public class Store {
     public static void main(String[] args) {
         Scanner r = new Scanner(System.in); //Used as main scanner for all inputs.
         
+        //Prompt and adding store information
+        System.out.print("What is the name of the store owner? ");
+        String owner = r.nextLine();
+        System.out.print("Where is the store? ");
+        String loc = r.nextLine();
+        System.out.print("What is the store's phone number? ");
+        String phone = r.nextLine();
+        StoreClass store = new StoreClass(loc, owner, phone);
+        
+        //Prompt for ading, removing, searching for, and buying items
         System.out.print("Would you like to add, search for, remove, or buy items? (A/S/R/B) ");
         String input1 = r.nextLine();
         String desc = "", bu  = "";
