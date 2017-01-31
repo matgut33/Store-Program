@@ -20,8 +20,24 @@ public class Store {
     public static void main(String[] args) {
         Scanner r = new Scanner(System.in); //Used as main scanner for all inputs.
         
-        System.out.print("Would you like to add, search for, or remove items? (A/S/R) ");
+        System.out.print("Would you like to add, search for, remove, or buy items? (A/S/R/B) ");
         String input1 = r.nextLine();
+        if(input1.equals("A") || input1.equals("a"))
+        {
+            
+        }
+        else if(input1.equals("S") || input1.equals("s"))
+        {
+            
+        }
+        else if(input1.equals("R") || input1.equals("r"))
+        {
+            
+        }
+        else if(input1.equals("B") || input1.equals("b"))
+        {
+            
+        }
     }
 
 }
