@@ -22,9 +22,12 @@ public class Store {
         
         System.out.print("Would you like to add, search for, remove, or buy items? (A/S/R/B) ");
         String input1 = r.nextLine();
+        String desc = "", bu  = "";
+        double pr = 0, sa = 0;
         if(input1.equals("A") || input1.equals("a"))
         {
-            
+            StoreClass add = new StoreClass();
+            add.addItem(desc, bu, pr, sa);
         }
         else if(input1.equals("S") || input1.equals("s"))
         {
