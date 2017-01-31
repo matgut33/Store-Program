@@ -55,4 +55,14 @@ public class StoreClass {
     public void addItem(String desc, String bu, double pr, double sa) {
         ItemClass q = new ItemClass(desc, bu, pr, sa);
     }
+    
+    public String removeItem(String item) {
+        return "ERROR: item removal unsuccessful.";
+    }
+    
+    public boolean findItem(String item) {
+        boolean q = false;
+        
+        return q;
+    }
 }
