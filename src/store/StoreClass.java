@@ -10,6 +10,8 @@ package store;
  * @authors Henry Dench [c], Matthew Gutkin, Sam Meyerowitz
  * @author Period 8
  */
+
+import store.ItemClass;
 public class StoreClass {
     private String location, owner, phone;
     private String[] items = new String[4];
@@ -50,4 +52,7 @@ public class StoreClass {
         return phone;
     }
     
+    public void addItem(String desc, String bu, double pr, double sa) {
+        ItemClass q = new ItemClass(desc, bu, pr, sa);
+    }
 }

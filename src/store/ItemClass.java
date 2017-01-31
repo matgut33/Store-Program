@@ -21,7 +21,7 @@ public class ItemClass {
         salesprice = 0;
     }
 
-    public void ItemClass(String d, String b, double p, double s) {
+    public ItemClass(String d, String b, double p, double s) {
         description = d;
         buyer = b;
         price = p;
