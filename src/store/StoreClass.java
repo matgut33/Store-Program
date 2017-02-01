@@ -11,10 +11,11 @@ package store;
  * @author Period 8
  */
 
-import store.ItemClass;
+import java.util.Scanner;
 public class StoreClass {
     private String location, owner, phone;
     private String[] items = new String[4];
+    Scanner r = new Scanner(System.in);
     
     public StoreClass() {
         location = "Unknown";
@@ -50,6 +51,18 @@ public class StoreClass {
     
     public String getPhone() {
         return phone;
+    }
+    
+    public void addItem() {
+        System.out.print("Enter the description of the item: ");
+        String desc = r.nextLine();
+        System.out.print("Who is the buyer? ");
+        String buyer = r.nextLine();
+        System.out.print("How much does it cost? ");
+        double price = r.nextDouble();
+        System.out.print("What is the sale price? ");
+        double sale = r.nextDouble();
+        ItemClass q = new ItemClass(desc, buyer, price, sale);
     }
     
     public void addItem(String desc, String bu, double pr, double sa) {
