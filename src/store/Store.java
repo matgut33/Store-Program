@@ -36,7 +36,7 @@ public class Store {
         double pr = 0, sa = 0;
         if(input1.equals("A") || input1.equals("a"))
         {
-            store.addItem(desc, bu, pr, sa); //Adds store item, input in Store class 'add'
+            store.addItem(); //Adds store item, input in Store class 'add'
         }
         else if(input1.equals("S") || input1.equals("s"))
         {
