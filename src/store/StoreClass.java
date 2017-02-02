@@ -93,7 +93,7 @@ public class StoreClass {
         boolean q = false;
         String name = item;
         for (int num = 0; num < 101; num++) {
-            if (items[num][0].equals(name)) {q = true;}
+            if (items[num][0].toLowerCase().equals(name.toLowerCase())) {q = true;}
         }
         return q;
     }
