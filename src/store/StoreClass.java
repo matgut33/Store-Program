@@ -13,8 +13,9 @@ package store;
 
 import java.util.Scanner;
 public class StoreClass {
+    private int cItems = 0;
     private String location, owner, phone;
-    private String[] items = new String[4];
+    private String[][] items = new String[100][4];
     Scanner r = new Scanner(System.in);
     
     public StoreClass() {
@@ -54,19 +55,22 @@ public class StoreClass {
     }
     
     public void addItem() {
+        System.out.print("Enter the name of the item: ");
+        String name = r.nextLine();
         System.out.print("Enter the description of the item: ");
         String desc = r.nextLine();
         System.out.print("Who is the buyer? ");
         String buyer = r.nextLine();
         System.out.print("How much does it cost? ");
-        double price = r.nextDouble();
+        String price = r.nextLine();
         System.out.print("What is the sale price? ");
-        double sale = r.nextDouble();
-        ItemClass q = new ItemClass(desc, buyer, price, sale);
-    }
-    
-    public void addItem(String desc, String bu, double pr, double sa) {
-        ItemClass q = new ItemClass(desc, bu, pr, sa);
+        String sale = r.nextLine();
+        items[cItems][0] = name;
+        items[cItems][1] = desc;
+        items[cItems][2] = buyer;
+        items[cItems][3] = price;
+        items[cItems][4] = sale;
+        cItems++;
     }
     
     public String removeItem(String item) {
