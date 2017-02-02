@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class StoreClass {
     private int cItems = 0;
     private String location, owner, phone;
-    private String[][] items = new String[100][4];
+    private String[][] items = new String[101][5];
     Scanner r = new Scanner(System.in);
     
     public StoreClass() {
@@ -73,13 +73,28 @@ public class StoreClass {
         cItems++;
     }
     
-    public String removeItem(String item) {
-        return "ERROR: item removal unsuccessful.";
+    public void removeItem(String item) {
+        boolean found = findItem(item);
+        if (found == false) {
+            System.out.println("ERROR: ITEM NOT FOUND");
+        }
+        else {
+            int nItem = 0;
+            for (int num = 0; num < 101; num++ ) {
+                if (items[num][0].equals(item)) {nItem = num; break;}
+            }
+            for (int num = 0; num < 5; num++) {
+                items[nItem][num] = "";
+            }
+        }
     }
     
     public boolean findItem(String item) {
         boolean q = false;
-        
+        String name = item;
+        for (int num = 0; num < 101; num++) {
+            if (items[num][0].equals(name)) {q = true;}
+        }
         return q;
     }
 }

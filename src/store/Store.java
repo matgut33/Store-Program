@@ -29,10 +29,12 @@ public class Store {
         String phone = r.nextLine();
         StoreClass store = new StoreClass(loc, owner, phone);
         
+        boolean flag = false;
+        while (flag = false) {
         //Prompt for ading, removing, searching for, and buying items
         System.out.print("Would you like to add, search for, remove, or buy items? (A/S/R/B) ");
         String input1 = r.nextLine();
-        String desc = "", bu  = "";
+        String desc = "", bu  = "", item = "";
         double pr = 0, sa = 0;
         if(input1.equals("A") || input1.equals("a"))
         {
@@ -40,15 +42,23 @@ public class Store {
         }
         else if(input1.equals("S") || input1.equals("s"))
         {
-            
+            System.out.print("Enter the name of the item: ");
+            item = r.nextLine();
+            store.findItem(item); //Searches for item
         }
         else if(input1.equals("R") || input1.equals("r"))
         {
-            
+            System.out.print("Enter the name of the item: ");
+            item = r.nextLine();
+            store.removeItem(item);
         }
         else if(input1.equals("B") || input1.equals("b"))
         {
             
+        }
+        System.out.println("Would you like to perform more actions? (Y/N) ");
+        String yorn = r.nextLine();
+       
         }
     }
 
