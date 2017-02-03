@@ -80,10 +80,15 @@ public class StoreClass {
         }
         else {
             int nItem = 0;
-            for (int num = 0; num < 101; num++ ) {
-                if (items[num][0].equals(item)) {nItem = num; break;}
+            int num = 0;
+        while (num < 100) {
+            if (items[num][0].equalsIgnoreCase(item))  {
+                nItem = num;
+                break;
             }
-            for (int num = 0; num < 5; num++) {
+            num ++;
+        }
+            for (int numS = 0; num < 5; num++) {
                 items[nItem][num] = "";
             }
         }
@@ -93,10 +98,15 @@ public class StoreClass {
         boolean q = false;
         String name = item;
         int num = 0;
-        while (num < 100) {
-            if (items[num][0].equalsIgnoreCase(name))  {
+        while (num < 90) {
+            if (items[0][0].equalsIgnoreCase(name))  
+            {
                 q = true;
                 break;
+            }
+            else
+            {
+                q = false;
             }
             num ++;
         }
