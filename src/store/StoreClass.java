@@ -92,8 +92,13 @@ public class StoreClass {
     public boolean findItem(String item) {
         boolean q = false;
         String name = item;
-        for (int num = 0; num < 101; num++) {
-            if (items[num][0].toLowerCase().equals(name.toLowerCase())) {q = true;}
+        int num = 0;
+        while (num < 100) {
+            if (items[num][0].equalsIgnoreCase(name))  {
+                q = true;
+                break;
+            }
+            num ++;
         }
         return q;
     }
