@@ -67,11 +67,7 @@ public class StoreClass {
         String price = r.nextLine();
         System.out.print("What is the sale price? $");
         String sale = r.nextLine();
-        items[cItems].setName(name);
-        items[cItems].setDesc(desc);
-        items[cItems].setBuyer(buyer);
-        items[cItems].setPrice(price);
-        items[cItems].setSalesprice(sale);
+        items[cItems] = new ItemClass(desc, buyer, price, sale, name);
         cItems++;
     }
     
@@ -90,11 +86,12 @@ public class StoreClass {
             }
             num ++;
         }
-            items[cItems].setName("");
-            items[cItems].setDesc("");
-            items[cItems].setBuyer("");
-            items[cItems].setPrice("");
-            items[cItems].setSalesprice("");
+            items[num].setName("");
+            items[num].setDesc("");
+            items[num].setBuyer("");
+            items[num].setPrice("");
+            items[num].setSalesprice("");
+            System.out.println("Item Removed!");
         }
     }
     
@@ -115,7 +112,6 @@ public class StoreClass {
                 }
                 num ++;
             }
-            System.out.println("Item Removed!");
             return q;
         } catch (NullPointerException e) {
             return false;
