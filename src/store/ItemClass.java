@@ -11,7 +11,7 @@ package store;
  * @author Period 8
  */
 public class ItemClass {
-    private String description, buyer, price, salesprice;
+    private String description, buyer, price, salesprice, name;
     
 
     public ItemClass() {
@@ -19,45 +19,54 @@ public class ItemClass {
         buyer = "Unknown";
         price = "Unknown";
         salesprice = "Unknown";
+        name = "Unknown";
     }
 
-    public ItemClass(String d, String b, String p, String s) {
+    public ItemClass(String d, String b, String p, String s, String n) {
         description = d;
         buyer = b;
         price = p;
-        salesprice = s;   
+        salesprice = s;
+        name = n;
     }
 
-    public void SetDescription(String d) {
+    public void setDesc(String d) {
         description = d;
     }
 
-    public String GetDescription() {
+    public String getDesc() {
         return description;
     }
 
-    public void SetBuyer(String b) {
+    public void setBuyer(String b) {
         buyer = b;
     }
 
-    public String GetBuyer() {
+    public String getBuyer() {
         return buyer;
     }
 
-    public void SetPrice(String p) {
+    public void setPrice(String p) {
         price = p;
     }
 
-    public String GetPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void SetSalesprice(String s) {
+    public void setSalesprice(String s) {
         salesprice = s;
     }
 
-    public String GetSalesprice() {
+    public String getSalesprice() {
         return salesprice;
     }
 
+    public void setName(String n) {
+        name = n;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

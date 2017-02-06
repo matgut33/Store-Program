@@ -17,7 +17,7 @@ public class StoreClass {
     private int cItems = 0;
     private String location, owner, phone;
     private int itemcounter = 1;
-    private String[][] items = new String[101][6];
+    private ItemClass[] items = new ItemClass[101];
     Scanner r = new Scanner(System.in);
     
     public StoreClass() {
@@ -63,18 +63,16 @@ public class StoreClass {
         String desc = r.nextLine();
         System.out.print("Who is the buyer? ");
         String buyer = r.nextLine();
-        System.out.print("How much does it cost? ");
+        System.out.print("How much does it cost? $");
         String price = r.nextLine();
-        System.out.print("What is the sale price? ");
+        System.out.print("What is the sale price? $");
         String sale = r.nextLine();
-        items[cItems][0] = name;
-        items[cItems][1] = desc;
-        items[cItems][2] = buyer;
-        items[cItems][3] = price;
-        items[cItems][4] = sale;
+        items[cItems].setName(name);
+        items[cItems].setDesc(desc);
+        items[cItems].setBuyer(buyer);
+        items[cItems].setPrice(price);
+        items[cItems].setSalesprice(sale);
         cItems++;
-        
-        ItemClass itemcounter = new ItemClass(desc, buyer, price, sale);
     }
     
     public void removeItem(String item) {
@@ -86,15 +84,17 @@ public class StoreClass {
             int nItem = 0;
             int num = 0;
         while (num < 100) {
-            if (items[num][0].equalsIgnoreCase(item))  {
+            if (items[num].getName().equalsIgnoreCase(item))  {
                 nItem = num;
                 break;
             }
             num ++;
         }
-            for (int numS = 0; num < 5; num++) {
-                items[nItem][num] = "";
-            }
+            items[cItems].setName("");
+            items[cItems].setDesc("");
+            items[cItems].setBuyer("");
+            items[cItems].setPrice("");
+            items[cItems].setSalesprice("");
         }
     }
     
@@ -104,7 +104,7 @@ public class StoreClass {
             String name = item;
             int num = 0;
             while (num < 90) {
-                if (items[0][0].equalsIgnoreCase(name))  
+                if (items[num].getName().equalsIgnoreCase(name))  
                 {
                     q = true;
                     break;
@@ -132,13 +132,13 @@ public class StoreClass {
             int nItem = 0;
             int num = 0;
         while (num < 100) {
-            if (items[num][0].equalsIgnoreCase(item))  {
+            if (items[num].getName().equalsIgnoreCase(item))  {
                 nItem = num;
                 break;
             }
             num ++;
         }
-        System.out.println("Item '" + item + "' has been bought for $" + items[num][4] + " dollars" );
+        System.out.println("Item '" + item + "' has been bought for $" + items[num].getSalesprice() + " dollars" );
         }
     }
 }
