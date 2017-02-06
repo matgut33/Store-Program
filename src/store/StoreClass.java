@@ -95,21 +95,26 @@ public class StoreClass {
     }
     
     public boolean findItem(String item) {
-        boolean q = false;
-        String name = item;
-        int num = 0;
-        while (num < 90) {
-            if (items[0][0].equalsIgnoreCase(name))  
-            {
-                q = true;
-                break;
+        try {    
+            boolean q = false;
+            String name = item;
+            int num = 0;
+            while (num < 90) {
+                if (items[0][0].equalsIgnoreCase(name))  
+                {
+                    q = true;
+                    break;
+                }
+                else
+                {
+                    q = false;
+                }
+                num ++;
             }
-            else
-            {
-                q = false;
-            }
-            num ++;
+            System.out.println("Item Removed!");
+            return q;
+        } catch (NullPointerException e) {
+            return false;
         }
-        return q;
     }
 }
