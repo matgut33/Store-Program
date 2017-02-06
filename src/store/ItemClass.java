@@ -11,17 +11,17 @@ package store;
  * @author Period 8
  */
 public class ItemClass {
-    private String description, buyer;
-    private double price, salesprice;
+    private String description, buyer, price, salesprice;
+    
 
     public ItemClass() {
         description = "Unknown";
         buyer = "Unknown";
-        price = 0;
-        salesprice = 0;
+        price = "Unknown";
+        salesprice = "Unknown";
     }
 
-    public ItemClass(String d, String b, double p, double s) {
+    public ItemClass(String d, String b, String p, String s) {
         description = d;
         buyer = b;
         price = p;
@@ -44,19 +44,19 @@ public class ItemClass {
         return buyer;
     }
 
-    public void SetPrice(double p) {
+    public void SetPrice(String p) {
         price = p;
     }
 
-    public double GetPrice() {
+    public String GetPrice() {
         return price;
     }
 
-    public void SetSalesprice(double s) {
+    public void SetSalesprice(String s) {
         salesprice = s;
     }
 
-    public double GetSalesprice() {
+    public String GetSalesprice() {
         return salesprice;
     }
 

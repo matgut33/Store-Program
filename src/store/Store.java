@@ -60,7 +60,9 @@ public class Store {
                 }
                 else if(input1.equals("B") || input1.equals("b"))
                 {
-
+                    System.out.print("Enter the name of the item: ");
+                    item = r.nextLine();
+                    store.buyItem(item  );
                 }
                 System.out.print("Would you like to perform more actions? (Y/N) ");
                 String yorn = r.nextLine();

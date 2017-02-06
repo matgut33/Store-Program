@@ -12,10 +12,12 @@ package store;
  */
 
 import java.util.Scanner;
+import store.ItemClass;
 public class StoreClass {
     private int cItems = 0;
     private String location, owner, phone;
-    private String[][] items = new String[101][5];
+    private int itemcounter = 1;
+    private String[][] items = new String[101][6];
     Scanner r = new Scanner(System.in);
     
     public StoreClass() {
@@ -71,6 +73,8 @@ public class StoreClass {
         items[cItems][3] = price;
         items[cItems][4] = sale;
         cItems++;
+        
+        ItemClass itemcounter = new ItemClass(desc, buyer, price, sale);
     }
     
     public void removeItem(String item) {
@@ -115,6 +119,26 @@ public class StoreClass {
             return q;
         } catch (NullPointerException e) {
             return false;
+        }
+        
+    }
+    
+    public void buyItem(String item) {
+        boolean found = findItem(item);
+        if (found == false) {
+            System.out.println("ERROR: ITEM NOT FOUND");
+        }
+        else {
+            int nItem = 0;
+            int num = 0;
+        while (num < 100) {
+            if (items[num][0].equalsIgnoreCase(item))  {
+                nItem = num;
+                break;
+            }
+            num ++;
+        }
+        System.out.println("Item '" + item + "' has been bought for $" + items[num][4] + " dollars" );
         }
     }
 }
